@@ -1,2 +1,8 @@
 <!--pages/mine/index.wxml-->
-<text>pages/mine/index.wxml</text>
+<!-- <text>pages/mine/index.wxml</text> -->
+<view>
+<!-- for循环 -->
+    <ul >
+        <li wx:for="{{people}}">{{item.name}}</li>
+    </ul>
+</view>

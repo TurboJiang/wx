@@ -1,2 +1,35 @@
-<!--pages/main/index.wxml-->
-<view class="container">首页</view>
+<!-- pages/main/index.wxml -->
+<!-- <view class="container">首页</view> -->
+<!-- <swiper
+  indicator-dots="true"
+  indicator-color="red"
+  indicator-active-color="white"
+  autoplay="true"
+  current="1"
+  interval="3000"
+  duration="{{duration}}"
+>
+<! for循环三次swiper-item for循环必须要带上key值 不然会警告 -->
+<!-- <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper> -->
+<view class="container">
+  <scroll-view>
+    <view class="header">
+      <view class="header_hd">
+        <text>{{city}}</text>
+        <view class="downtips"></view>
+      </view>
+      <view class="header_bd">
+        <view class="header_bd-btn header_bd-hot">正在上映</view>
+        <view class="header_bd-btn header_bd-waiting">即将上映</view>
+      </view>
+      <view class="header_ft">
+        <image src="../../images/search.png" />
+      </view>
+    </view>
+  </scroll-view>
+</view>
