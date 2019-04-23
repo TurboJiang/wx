@@ -1,21 +1,5 @@
 <!-- pages/main/index.wxml -->
 <!-- <view class="container">首页</view> -->
-<!-- <swiper
-  indicator-dots="true"
-  indicator-color="red"
-  indicator-active-color="white"
-  autoplay="true"
-  current="1"
-  interval="3000"
-  duration="{{duration}}"
->
-<! for循环三次swiper-item for循环必须要带上key值 不然会警告 -->
-<!-- <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150" />
-    </swiper-item>
-  </block>
-</swiper> -->
 <view class="container">
   <scroll-view>
     <view class="header">
@@ -29,6 +13,40 @@
       </view>
       <view class="header_ft">
         <image src="../../images/search.png" />
+      </view>
+    </view>
+    <swiper indicator-dots="{{true}}" autoplay="true" interval="3000">
+      <!-- for循环三次swiper-item for循环必须要带上key值 不然会警告 -->
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view wx:for="{{items}}" wx:key="{{index}}">
+      <view class="flex item" hover-class="gary_hover" hover-stay-time="100">
+        <view class="item_left">
+          <image src="{{item.imgUrl}}" />
+        </view>
+        <view class="item_middle">
+          <view class="flex_auto">
+            <text class="title">{{item.name}}</text>
+          </view>
+          <view>
+            <view class="item_grade">
+              <!-- isShow=0未上映 显示多少人想看-->
+              <text class="score" wx:if="{{item.isShow == 0}}">
+                {{item.wantSee}}
+                <text style="font-size:12px;">人想看</text>
+              </text>
+              <!-- isShow=1已上映 显示评分 -->
+              <text class="score" wx:if="{{item.isShow == 1}}">
+                {{item.grade}}
+                <text style="font-size:12px;">分</text>
+              </text>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
   </scroll-view>

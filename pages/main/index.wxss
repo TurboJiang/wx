@@ -91,3 +91,6 @@ view.text {
     width: 23px;
     height: 23px;
 }
+.slide-image{
+    width: 100%;
+}
